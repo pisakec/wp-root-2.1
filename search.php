@@ -39,16 +39,7 @@ get_header();
 				</a>
 			</article>
 			<?php endwhile; ?>
-		</div>
-		<?php //get_sidebar(); ?>
-	</section>
-</main>
-<main class="isflex <?php if ( get_theme_mod( 'wp_script_theme_pro_enable_sidebar', 'yes') == 'yes' ) : ?>large-9 medium-9<?php else : ?>small-12<?php endif; ?> ">
-	<?php get_sidebar(); ?>
-	<section class="content homepage">
-
-		</ul>
-		<!-- end of the loop -->
+					<!-- end of the loop -->
 
 		<?php wp_reset_postdata(); ?>
 
@@ -57,6 +48,9 @@ get_header();
 			<?php _e( 'Sorry, no posts matched your criteria.' ); ?>
 		</p>
 		<?php endif; ?>
+		</div>
+		<?php //get_sidebar(); ?>
+	</section>
+</main>
 
-		<?php get_sidebar(); ?>
 		<?php get_footer(); ?>
