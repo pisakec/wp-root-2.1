@@ -4,8 +4,9 @@ get_header();
 ?>
 <h1>Category</h1>
 <main id="category">
-	<section class="wrapper has-sidebar">
-		<div class="content sidebar">
+<section class="content ">
+		<div class="wrapper has-sidebar">
+			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>					
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>				
 				<a href="<?php the_permalink()?>" class=""><?php the_post_thumbnail('full', array('class' => 'news-img-lg col-30')); ?></a>
@@ -17,7 +18,9 @@ get_header();
 				</article>
 			   <?php endwhile; endif; ?>
 		</div>
+			
 		<?php get_sidebar(); ?>
+	</div>
 	</section>
 </main>
 <?php get_footer(); ?>
