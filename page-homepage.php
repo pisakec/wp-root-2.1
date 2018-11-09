@@ -20,8 +20,11 @@ get_header();
 					 ?>
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<article>
-					<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );?>
+					<?php /*?><?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );?>
 					<div class="featured-image img-crop" style="background-image: url('<?php echo $thumb['0'];?>')" aria-label="<?php the_title(); ?>">
+					</div><?php */?>
+					<div class="featured-image">
+						<?php the_post_thumbnail('full', array('class' => 'news-img-lg full-width')); ?>
 					</div>
 					<div class="entry">
 						<?php global $post; $categories = get_the_category($post->ID); $cat_link = get_category_link($categories[0]->cat_ID); echo '<a href="'.$cat_link.'"  class="cat-name">'.$categories[0]->cat_name.'</a>' ?>
