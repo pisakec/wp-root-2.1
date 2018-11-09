@@ -34,7 +34,7 @@ outline: none;
 }
 * {
     box-sizing: border-box;
-   /* position: relative;*/
+    position: relative;
     margin: 0;
     padding: 0;
 }
@@ -94,9 +94,9 @@ ul.default li {
     text-indent: -1.5rem;
 }
 li{
-	    font-weight: 400;
+    font-weight: 400;
     line-height: 1.5;
-    margin: 0 0 0.5rem 0;
+   /* margin: 0 0 0.5rem 0;*/
     text-align: left;
     font-size: calc(12px + (15 - 11) * (100vw - 320px) / (1920 - 320) );
 }
@@ -200,23 +200,28 @@ layout
 }
 
 .content{
-    min-height: 50vh;
+    min-height: 100vh;
 	padding: 1em;
 }
 .content.sidebar{
-    min-height: 50vh;
-	width:calc(100% - 300px);
+    min-height: 100vh;
+	width: 100%;
 	border:1px solid red;
+        display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 .wrapper {
     margin: 0 auto;
-   /* max-width: 1280px;*/
+    max-width: 1200px;
     width: 100%;
     position: relative;
 }
 .wrapper.has-sidebar{
 	display: flex;
 	flex-flow: row;
+    width:calc(100% - 300px - 1em);
 }
 header {
     display: flex;
@@ -288,7 +293,27 @@ article{
 .menu-trigger span:nth-of-type(3){
 	
 }
-..container
+.featured-image{
+    height: 0;
+    width:100%;
+    padding-bottom:300px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border:3px solid red;
+}
+.featured-image img{
+    transform-origin: center center;
+    position: absolute;
+    margin: 0;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+}
 /* ==========================================================================
 aside
 ========================================================================== */
@@ -341,7 +366,7 @@ effect
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-/*.hamburger{padding:10px;display:inline-block;cursor:pointer;transition-property:opacity,-webkit-filter;transition-property:opacity,filter;transition-property:opacity,filter,-webkit-filter;transition-duration:.15s;transition-timing-function:linear;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible}.hamburger:hover{opacity:.8}.hamburger-box{width:30px;height:24px;display:inline-block;position:relative}.hamburger-inner{display:block;top:50%;margin-top:-2px}.hamburger-inner,.hamburger-inner::after,.hamburger-inner::before{width:30px;height:2px;background-color:#fff;border-radius:2px;position:absolute;transition-property:transform;transition-duration:.15s;transition-timing-function:ease}.hamburger-inner::after,.hamburger-inner::before{content:"";display:block}.hamburger-inner::before{top:-10px}.hamburger-inner::after{bottom:-10px}.hamburger--collapse .hamburger-inner{top:auto;bottom:0;transition-duration:.15s;transition-delay:.15s;transition-timing-function:cubic-bezier(.55,.055,.675,.19)}.hamburger--collapse .hamburger-inner::after{top:-20px;transition:top .3s .3s cubic-bezier(.33333,.66667,.66667,1),opacity .1s linear}.hamburger--collapse .hamburger-inner::before{transition:top .12s .3s cubic-bezier(.33333,.66667,.66667,1),transform .15s cubic-bezier(.55,.055,.675,.19)}.hamburger--collapse.is-active .hamburger-inner{transform:translate3d(0,-10px,0) rotate(-45deg);transition-delay:.32s;transition-timing-function:cubic-bezier(.215,.61,.355,1)}.hamburger--collapse.is-active .hamburger-inner::after{top:0;opacity:0;transition:top .3s cubic-bezier(.33333,0,.66667,.33333),opacity .1s .27s linear}.hamburger--collapse.is-active .hamburger-inner::before{top:0;-ms-transform:rotate(-90deg);transform:rotate(-90deg);transition:top .12s .18s cubic-bezier(.33333,0,.66667,.33333),transform .15s .42s cubic-bezier(.215,.61,.355,1)}.hamburger--arrow.is-active .hamburger-inner::before{transform:translate3d(-8px,0,0) rotate(-45deg) scale(.7,1)}.hamburger--arrow.is-active .hamburger-inner::after{transform:translate3d(-8px,0,0) rotate(45deg) scale(.7,1)}.hamburger--arrow-r.is-active .hamburger-inner::before{transform:translate3d(8px,0,0) rotate(45deg) scale(.7,1)}.hamburger--arrow-r.is-active .hamburger-inner::after{transform:translate3d(8px,0,0) rotate(-45deg) scale(.7,1)}
+.hamburger{padding:10px;display:inline-block;cursor:pointer;transition-property:opacity,-webkit-filter;transition-property:opacity,filter;transition-property:opacity,filter,-webkit-filter;transition-duration:.15s;transition-timing-function:linear;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible}.hamburger:hover{opacity:.8}.hamburger-box{width:30px;height:24px;display:inline-block;position:relative}.hamburger-inner{display:block;top:50%;margin-top:-2px}.hamburger-inner,.hamburger-inner::after,.hamburger-inner::before{width:30px;height:2px;background-color:#fff;border-radius:2px;position:absolute;transition-property:transform;transition-duration:.15s;transition-timing-function:ease}.hamburger-inner::after,.hamburger-inner::before{content:"";display:block}.hamburger-inner::before{top:-10px}.hamburger-inner::after{bottom:-10px}.hamburger--collapse .hamburger-inner{top:auto;bottom:0;transition-duration:.15s;transition-delay:.15s;transition-timing-function:cubic-bezier(.55,.055,.675,.19)}.hamburger--collapse .hamburger-inner::after{top:-20px;transition:top .3s .3s cubic-bezier(.33333,.66667,.66667,1),opacity .1s linear}.hamburger--collapse .hamburger-inner::before{transition:top .12s .3s cubic-bezier(.33333,.66667,.66667,1),transform .15s cubic-bezier(.55,.055,.675,.19)}.hamburger--collapse.is-active .hamburger-inner{transform:translate3d(0,-10px,0) rotate(-45deg);transition-delay:.32s;transition-timing-function:cubic-bezier(.215,.61,.355,1)}.hamburger--collapse.is-active .hamburger-inner::after{top:0;opacity:0;transition:top .3s cubic-bezier(.33333,0,.66667,.33333),opacity .1s .27s linear}.hamburger--collapse.is-active .hamburger-inner::before{top:0;-ms-transform:rotate(-90deg);transform:rotate(-90deg);transition:top .12s .18s cubic-bezier(.33333,0,.66667,.33333),transform .15s .42s cubic-bezier(.215,.61,.355,1)}.hamburger--arrow.is-active .hamburger-inner::before{transform:translate3d(-8px,0,0) rotate(-45deg) scale(.7,1)}.hamburger--arrow.is-active .hamburger-inner::after{transform:translate3d(-8px,0,0) rotate(45deg) scale(.7,1)}.hamburger--arrow-r.is-active .hamburger-inner::before{transform:translate3d(8px,0,0) rotate(45deg) scale(.7,1)}.hamburger--arrow-r.is-active .hamburger-inner::after{transform:translate3d(8px,0,0) rotate(-45deg) scale(.7,1)}
 
 
 .menu-wrapper {
@@ -471,11 +496,11 @@ ul.menu > li > a:hover {
     color: #289835;
 }
 
-ul.menu > li:first-child a {
+/*ul.menu > li:first-child a {
     color: #289835;
     margin: 0;
     font-weight: 500;
-}
+}*/
 
 ul.menu > li > ul.sub-menu {
     position: absolute;
